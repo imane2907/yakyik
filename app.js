@@ -5,7 +5,9 @@ var path = require("path")
 var mongoose = require("mongoose");
 var apiRoutes = require("./routes/api");
 var indexRoutes = require("./routes/index")
-mongoose.connect("mongodb://imane2907:123poyraz@ds149974.mlab.com:49974/yik-yak", function(err){
+var ENV = require("./.env")
+
+mongoose.connect(ENV.mgdb, function(err){
 	if(err){
 		console.log("failed to connect")
 	} else {
